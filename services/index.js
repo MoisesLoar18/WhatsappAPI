@@ -32,7 +32,7 @@ router.post( '/send', async ( req, res ) => {
         } )
         .catch();
 
-    res.send( 'Mensaje enviado' );
+    res.send( 'Mensaje enviado!' );
 } );
 
 // Shortcuts
