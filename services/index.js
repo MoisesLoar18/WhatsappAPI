@@ -29,10 +29,12 @@ router.post( '/send', async ( req, res ) => {
 
             await wbm.send( phones, message );
             await wbm.end();
+
+            return res.send( 'Mensaje enviado!' );
+
         } )
         .catch();
 
-    res.send( 'Mensaje enviado!' );
 } );
 
 // Shortcuts
