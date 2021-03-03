@@ -30,12 +30,7 @@ router.post( '/send', async ( req, res ) => {
             await wbm.send( phones, message );
             await wbm.end();
         } )
-        .catch( err => {
-            return res.status( 500 ).json( {
-                message: 'Oops, an error has occurred',
-                err
-            } );
-        } );
+        .catch();
 
     res.send( 'Mensaje enviado' );
 } );
