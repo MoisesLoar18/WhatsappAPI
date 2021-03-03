@@ -147,6 +147,7 @@ async function sendTo ( phoneOrContact, message ) {
         message = generateCustomMessage( phoneOrContact, message );
     }
     try {
+        console.log( 'Enviando' );
         await page.goto( `https://web.whatsapp.com/send?phone=${ phone }&text=${ encodeURIComponent( message ) }` );
         await page.waitForSelector( "div#startup", { hidden: true, timeout: 60000 } );
         await page.waitForXPath( '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]', { timeout: 20000 } );
@@ -168,7 +169,6 @@ async function sendTo ( phoneOrContact, message ) {
  */
 async function send ( phoneOrContacts, message ) {
     for ( let phoneOrContact of phoneOrContacts ) {
-        console.log( 'Enviando' );
         await sendTo( phoneOrContact, message );
     }
 }
