@@ -20,7 +20,7 @@ async function start ( { showBrowser = false, qrCodeData = false, session = true
     }
 
     const args = {
-        executablePath: chromeFinder(),
+        // executablePath: chromeFinder() || '',
         headless: !showBrowser,
         userDataDir: tmpPath,
         args: [
