@@ -154,7 +154,7 @@ async function sendTo ( phoneOrContact, message ) {
         console.log( 'Enviando' );
         await page.goto( `https://web.whatsapp.com/send?phone=${ phone }&text=${ encodeURIComponent( message ) }` );
         await page.waitForSelector( "div#startup", { hidden: true, timeout: 60000 } );
-        await page.waitForXPath( '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]', { timeout: 30000 } );
+        await page.waitForXPath( '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]', { waitUntil: 'load', timeout: 30000 } );
         await page.keyboard.press( "Enter" );
         await page.waitFor( 1000 );
         console.log( `${ phone } Sent\n` );
