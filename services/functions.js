@@ -154,8 +154,8 @@ async function sendTo ( phoneOrContact, message ) {
         console.log( 'Enviando' );
         await page.goto( `https://web.whatsapp.com/send?phone=${ phone }&text=${ encodeURIComponent( message ) }` );
         await page.waitForSelector( "div#startup", { hidden: true, timeout: 60000 } );
-        await page.waitForSelector( "#main > footer > div.vR1LG._3wXwX.copyable-area > div._2A8P4 > div > div._2_1wd.copyable-text.selectable-text", { hidden: true, timeout: 60000 } );
-        // await page.waitForXPath( '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]', { waitUntil: 'load', timeout: 30000 } );
+        // await page.waitForSelector( "", { hidden: true, timeout: 60000 } );
+        await page.waitForXPath( '/html/body/div/div/div/div[4]/div/footer/div[1]/div[2]/div/div[2]', { timeout: 30000 } );
         await page.keyboard.press( "Enter" );
         await page.waitFor( 1000 );
         console.log( `${ phone } Sent\n` );
