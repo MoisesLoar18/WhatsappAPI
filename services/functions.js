@@ -22,6 +22,7 @@ async function start ( { showBrowser = false, qrCodeData = false, session = true
         headless: !showBrowser,
         userDataDir: tmpPath,
         args: ["--no-sandbox",
+            '--disable-setuid-sandbox',
             // "--blink-settings=imagesEnabled=false"]
         ]
     };
