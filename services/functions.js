@@ -3,7 +3,6 @@ const qrcode = require( "qrcode-terminal" );
 const { from, merge } = require( 'rxjs' );
 const { take } = require( 'rxjs/operators' );
 const path = require( 'path' );
-const chromeFinder = require( 'chrome-finder' );
 var rimraf = require( "rimraf" );
 
 let browser = null;
