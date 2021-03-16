@@ -3,6 +3,7 @@ const qrcode = require( "qrcode-terminal" );
 const { from, merge } = require( 'rxjs' );
 const { take } = require( 'rxjs/operators' );
 const path = require( 'path' );
+const chromeFinder = require( 'chrome-finder' );
 var rimraf = require( "rimraf" );
 
 let browser = null;
@@ -19,6 +20,7 @@ async function start ( { showBrowser = false, qrCodeData = false, session = true
     }
 
     const args = {
+        executablePath: chromeFinder(),
         headless: !showBrowser,
         userDataDir: tmpPath,
         args: [
